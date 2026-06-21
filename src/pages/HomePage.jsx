@@ -8,6 +8,8 @@ import FounderSection from '../components/FounderSection';
 import { THEMES } from '../data/content';
 
 const GallerySection = lazy(() => import('../components/GallerySection'));
+const EventsSection = lazy(() => import('../components/EventsSection'));
+const TestimonialsSection = lazy(() => import('../components/TestimonialsSection'));
 const ContactSection = lazy(() => import('../components/ContactSection'));
 const LinksSection = lazy(() => import('../components/LinksSection'));
 const FooterCTA = lazy(() => import('../components/FooterCTA'));
@@ -69,15 +71,19 @@ export default function HomePage() {
           <FounderSection />
         </div>
         <Suspense fallback={<div style={{ minHeight: 400 }} />}>
+          <div id="events">
+            <EventsSection />
+          </div>
           <div id="gallery">
             <GallerySection />
+          </div>
+          <div id="testimonials">
+            <TestimonialsSection />
           </div>
           <div id="contact">
             <ContactSection />
           </div>
-          <div id="events">
-            <LinksSection />
-          </div>
+          <LinksSection />
           <FooterCTA />
         </Suspense>
       </main>

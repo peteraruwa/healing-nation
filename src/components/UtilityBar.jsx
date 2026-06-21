@@ -7,8 +7,14 @@ const SOCIAL_ICONS = [
   { label: 'Visit our Instagram page', symbol: '◎', className: 'hn-fb-icon' },
   { label: 'Visit our YouTube channel', symbol: '▶', className: 'hn-fb-icon' },
   { label: 'Visit our X (Twitter) page', symbol: '𝕏', className: 'hn-fb-icon' },
-  { label: 'Visit our TikTok page', symbol: '♪', className: 'hn-fb-icon' },
 ];
+
+const UTILITY_TARGETS = {
+  Crusades: '#events',
+  'Campus Invasion': '#arms',
+  'Bible School': '#arms',
+  Testimonies: '#testimonials',
+};
 
 export default function UtilityBar({ show }) {
   const navigate = useNavigate();
@@ -42,7 +48,7 @@ export default function UtilityBar({ show }) {
     <div className="hn-on-dark" style={{ background: '#2c2925', color: '#cbc2b4' }}>
       <nav aria-label="Utility" style={{ maxWidth: 1180, margin: '0 auto', padding: '8px clamp(16px,5vw,40px)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '10px 22px', fontSize: 12.5, fontWeight: 600, letterSpacing: '.04em' }}>
         {utilityLinks.map((u) => (
-          <a key={u} href="#" className="hn-util-link" style={{ color: '#cbc2b4' }}>{u}</a>
+          <a key={u} href={UTILITY_TARGETS[u] || '#'} className="hn-util-link" style={{ color: '#cbc2b4' }}>{u}</a>
         ))}
         <div style={{ flex: 1 }}></div>
         <form role="search" onSubmit={onSubmit} style={{ position: 'relative' }}>

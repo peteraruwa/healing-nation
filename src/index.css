@@ -160,4 +160,4 @@ textarea:focus-visible,
   .hn-hide-mobile{display:none}
 }
 
-#story,#arms,#founder,#gallery,#events,#contact{scroll-margin-top:96px}
+#story,#arms,#founder,#gallery,#events,#contact,#testimonials{scroll-margin-top:96px}

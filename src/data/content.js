@@ -28,6 +28,51 @@ export const THEMES = {
 export const navLinks = ['About', 'Our Arms', 'The Founder', 'Events', 'Media'];
 export const utilityLinks = ['Crusades', 'Campus Invasion', 'Bible School', 'Testimonies'];
 
+export const events = [
+  {
+    title: 'Medical Outreach',
+    location: 'Makoko, Lagos',
+    date: 'Sat, March 14, 2026',
+    time: '9:00 AM – 3:00 PM',
+    body: 'Free medical screening, treatment, and Gospel ministry to the riverine community of Makoko — bringing physical healing alongside the message of salvation to families who lack access to basic healthcare.',
+    tag: 'Outreach',
+  },
+  {
+    title: 'Campus Crusade',
+    location: 'Igbinedion University, Okada',
+    date: 'Sat, April 18, 2026',
+    time: '5:00 PM – 8:00 PM',
+    body: 'An evening of worship, the Word, and an altar call for students — igniting revival on campus and raising a generation of believers who are bold for Christ.',
+    tag: 'Crusade',
+  },
+  {
+    title: 'Crusade',
+    location: 'University of Ibadan, Oyo State',
+    date: 'Sat, May 23, 2026',
+    time: '4:00 PM – 7:30 PM',
+    body: 'A citywide crusade reaching students and residents around the University of Ibadan with the Gospel, prayer for healing, and deliverance.',
+    tag: 'Crusade',
+  },
+];
+
+export const testimonials = [
+  {
+    name: 'Mrs. Eunice A.',
+    location: 'Lagos',
+    quote: 'I came to the medical outreach in Makoko for a check-up and left with my health restored and my soul saved. Healing Nations gave me hope I had stopped believing in.',
+  },
+  {
+    name: 'David O.',
+    location: 'Igbinedion University, Okada',
+    quote: 'The Campus Crusade changed the direction of my life. I gave my life to Christ that night and joined the campus fellowship — I have never been the same since.',
+  },
+  {
+    name: 'Pastor John K.',
+    location: 'Ibadan',
+    quote: "We invited Healing Nations for a crusade in our community and saw deliverance, healing, and salvation testimonies we still talk about today. A truly anointed ministry.",
+  },
+];
+
 export const arms = [
   { num: '01', title: 'Campus Invasion', body: 'Reaching students in tertiary institutions, igniting revival, and raising young believers who are on fire for God.' },
   { num: '02', title: 'Crusades & Outreaches', body: 'Taking the Gospel to cities and communities through evangelistic meetings — bringing salvation, healing, and deliverance to many.' },
@@ -70,7 +115,10 @@ export const searchIndex = [
   { label: 'Watch Sermons', target: '#events' },
   { label: 'Give Online', target: '/give' },
   { label: 'Partner With Us', target: '/give' },
-  { label: 'Testimonies', target: '#gallery' },
+  { label: 'Testimonies', target: '#testimonials' },
+  { label: 'Medical Outreach', target: '#events' },
+  { label: 'Campus Crusade', target: '#events' },
+  { label: 'University of Ibadan Crusade', target: '#events' },
 ];
 
 export const gallery = [
