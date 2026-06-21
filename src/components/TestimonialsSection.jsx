@@ -1,21 +1,45 @@
+import { Quote } from 'lucide-react';
 import { testimonials } from '../data/content';
 
 export default function TestimonialsSection() {
+  const loop = [...testimonials, ...testimonials];
+
   return (
-    <section style={{ background: '#eceae4', padding: 'clamp(40px,6vw,80px) clamp(16px,5vw,40px)' }}>
-      <div style={{ maxWidth: 1180, margin: '0 auto' }}>
-        <div className="hn-reveal" style={{ textAlign: 'center', marginBottom: 'clamp(26px,4vw,44px)' }}>
-          <div style={{ color: 'var(--accent-dark,#875f31)', fontSize: 13, fontWeight: 800, letterSpacing: '.2em' }}>LIVES TOUCHED</div>
-          <h2 style={{ fontFamily: "'Lora',serif", fontWeight: 700, fontSize: 'clamp(28px,4.5vw,46px)', margin: '8px 0 0' }}>Testimonies</h2>
+    <section style={{ background: '#eceae4', padding: 'clamp(40px,6vw,76px) 0' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 clamp(16px,5vw,40px)', borderLeft: '4px solid var(--accent-dark,#875f31)', marginBottom: 'clamp(26px,4vw,40px)' }}>
+        <div className="hn-reveal" style={{ paddingLeft: 14 }}>
+          <div style={{ color: 'var(--accent-dark,#875f31)', fontSize: 12.5, fontWeight: 800, letterSpacing: '.22em' }}>LIVES TOUCHED</div>
+          <h2 style={{ fontFamily: "'Lora',serif", fontWeight: 700, fontSize: 'clamp(28px,4.5vw,46px)', margin: '4px 0 0' }}>Testimonies</h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 'clamp(16px,2.5vw,26px)' }}>
-          {testimonials.map((t, i) => (
-            <div key={t.name} className="hn-reveal hn-arm-card" style={{ background: '#fff', borderRadius: 8, padding: 'clamp(24px,3vw,32px)', boxShadow: '0 10px 28px rgba(0,0,0,.07)', display: 'flex', flexDirection: 'column', animationDelay: `${i * 0.12}s` }}>
-              <div style={{ fontFamily: "'Lora',serif", fontSize: 40, color: 'var(--accent,#a9783f)', lineHeight: 1, opacity: .5 }} aria-hidden="true">“</div>
-              <p style={{ margin: '4px 0 18px', fontSize: 15.5, color: '#4a463e', flex: 1, fontStyle: 'italic' }}>{t.quote}</p>
-              <div style={{ fontWeight: 700, fontSize: 15, color: '#2c2925' }}>{t.name}</div>
-              <div style={{ fontSize: 13.5, color: '#7c8a57' }}>{t.location}</div>
-            </div>
+      </div>
+
+      <div className="hn-marquee" style={{ overflow: 'hidden', maskImage: 'linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)' }}>
+        <div className="hn-marquee-track hn-marquee-track-testimonials" style={{ display: 'flex', width: 'max-content' }}>
+          {loop.map((t, i) => (
+            <figure
+              key={t.name + i}
+              style={{
+                flex: 'none',
+                width: 'clamp(300px,32vw,380px)',
+                margin: '0 10px',
+                background: i % 2 === 0 ? '#fff' : '#2c2925',
+                color: i % 2 === 0 ? '#2c2925' : '#f4f3ea',
+                padding: '26px 26px 22px',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              <Quote
+                size={84}
+                aria-hidden="true"
+                style={{ position: 'absolute', top: -10, right: -10, opacity: i % 2 === 0 ? 0.06 : 0.1, color: i % 2 === 0 ? '#2c2925' : '#fff' }}
+              />
+              <blockquote style={{ margin: '0 0 18px', fontSize: 15.5, lineHeight: 1.55, fontStyle: 'italic', position: 'relative' }}>{t.quote}</blockquote>
+              <figcaption style={{ borderTop: `2px solid ${i % 2 === 0 ? 'var(--accent,#a9783f)' : 'var(--accent,#d6a96f)'}`, paddingTop: 12 }}>
+                <div style={{ fontWeight: 700, fontSize: 14.5 }}>{t.name}</div>
+                <div style={{ fontSize: 13, opacity: .7 }}>{t.location}</div>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>

@@ -41,7 +41,7 @@ export default function Header({ isDesktop, menuOpen, toggleMenu, closeMenu }) {
               <a key={n} href={NAV_TARGETS[n] || '#'} className="hn-nav-link" style={{ fontSize: 15, fontWeight: 600, color: '#2c2925' }}>{n}</a>
             ))}
             <Link to="/give" className="hn-give-btn" style={{ fontSize: 14, fontWeight: 700, color: '#fff', background: 'var(--accent,#a9783f)', padding: '10px 18px', borderRadius: 5 }}>Give Online</Link>
-            <a href="#" className="hn-partner-btn" style={{ fontSize: 14, fontWeight: 700, border: '1.5px solid #2c2925', padding: '8.5px 16px', borderRadius: 5 }}>Partner With Us</a>
+            <Link to="/partner" className="hn-partner-btn" style={{ fontSize: 14, fontWeight: 700, border: '1.5px solid #2c2925', padding: '8.5px 16px', borderRadius: 5 }}>Partner With Us</Link>
           </nav>
         ) : (
           <button
@@ -66,7 +66,7 @@ export default function Header({ isDesktop, menuOpen, toggleMenu, closeMenu }) {
           ))}
           <div style={{ display: 'flex', gap: 10, marginTop: 14 }}>
             <Link to="/give" onClick={closeMenu} style={{ flex: 1, textAlign: 'center', fontSize: 15, fontWeight: 700, color: '#fff', background: 'var(--accent,#a9783f)', padding: 12, borderRadius: 6 }}>Give Online</Link>
-            <a href="#" onClick={closeMenu} className="hn-partner-btn" style={{ flex: 1, textAlign: 'center', fontSize: 15, fontWeight: 700, border: '1.5px solid #2c2925', padding: 11, borderRadius: 6 }}>Partner</a>
+            <Link to="/partner" onClick={closeMenu} className="hn-partner-btn" style={{ flex: 1, textAlign: 'center', fontSize: 15, fontWeight: 700, border: '1.5px solid #2c2925', padding: 11, borderRadius: 6 }}>Partner</Link>
           </div>
         </nav>
       )}

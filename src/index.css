@@ -66,6 +66,7 @@ textarea:focus-visible,
   html{scroll-behavior:auto}
   .hn-reveal,.hn-rise,.hn-pop{animation:none!important}
   *{animation-duration:.001s!important;transition-duration:.001s!important}
+  .hn-marquee-track{animation:none!important;overflow-x:auto}
 }
 
 .hn-logo-img{transition:transform .3s ease}
@@ -159,5 +160,13 @@ textarea:focus-visible,
 @media (max-width:600px){
   .hn-hide-mobile{display:none}
 }
+
+@keyframes hngMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hn-marquee-track{animation:hngMarquee 38s linear infinite}
+.hn-marquee-track-testimonials{animation-duration:46s}
+.hn-marquee:hover .hn-marquee-track{animation-play-state:paused}
+.hn-marquee:focus-within .hn-marquee-track{animation-play-state:paused}
+
+.hn-ticket{box-shadow:0 14px 32px rgba(0,0,0,.28)}
 
 #story,#arms,#founder,#gallery,#events,#contact,#testimonials{scroll-margin-top:96px}

@@ -114,11 +114,39 @@ export const searchIndex = [
   { label: 'Apply to Bible School', target: '#events' },
   { label: 'Watch Sermons', target: '#events' },
   { label: 'Give Online', target: '/give' },
-  { label: 'Partner With Us', target: '/give' },
+  { label: 'Partner With Us', target: '/partner' },
   { label: 'Testimonies', target: '#testimonials' },
   { label: 'Medical Outreach', target: '#events' },
   { label: 'Campus Crusade', target: '#events' },
   { label: 'University of Ibadan Crusade', target: '#events' },
+];
+
+export const partnerTiers = [
+  {
+    name: 'Seed Partner',
+    amount: '₦5,000',
+    cadence: 'per month',
+    benefits: 'Monthly prayer letter, ministry updates, and a place in our partner prayer circle.',
+  },
+  {
+    name: 'Harvest Partner',
+    amount: '₦20,000',
+    cadence: 'per month',
+    benefits: 'Everything in Seed, plus a quarterly ministry briefing call and early access to crusade and outreach schedules.',
+  },
+  {
+    name: 'Nations Partner',
+    amount: '₦100,000',
+    cadence: 'per month',
+    benefits: 'Everything in Harvest, plus an annual in-person briefing with the founder and recognition in ministry publications.',
+  },
+];
+
+export const partnerImpact = [
+  { value: '120+', label: 'Crusades & outreaches funded' },
+  { value: '40', label: 'Campus fellowships planted' },
+  { value: '15K+', label: 'Lives reached yearly' },
+  { value: '8', label: 'Nations and counting' },
 ];
 
 export const gallery = [
