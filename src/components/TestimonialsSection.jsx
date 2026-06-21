@@ -1,21 +1,21 @@
 import { Quote } from 'lucide-react';
+import Marquee from './Marquee';
 import { testimonials } from '../data/content';
 
 export default function TestimonialsSection() {
-  const loop = [...testimonials, ...testimonials];
-
   return (
     <section style={{ background: '#eceae4', padding: 'clamp(40px,6vw,76px) 0' }}>
-      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 clamp(16px,5vw,40px)', borderLeft: '4px solid var(--accent-dark,#875f31)', marginBottom: 'clamp(26px,4vw,40px)' }}>
-        <div className="hn-reveal" style={{ paddingLeft: 14 }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: '0 clamp(16px,5vw,40px)' }}>
+        <div className="hn-reveal" style={{ borderLeft: '4px solid var(--accent-dark,#875f31)', paddingLeft: 14, marginBottom: 'clamp(26px,4vw,40px)' }}>
           <div style={{ color: 'var(--accent-dark,#875f31)', fontSize: 12.5, fontWeight: 800, letterSpacing: '.22em' }}>LIVES TOUCHED</div>
           <h2 style={{ fontFamily: "'Lora',serif", fontWeight: 700, fontSize: 'clamp(28px,4.5vw,46px)', margin: '4px 0 0' }}>Testimonies</h2>
         </div>
-      </div>
 
-      <div className="hn-marquee" style={{ overflow: 'hidden', maskImage: 'linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)' }}>
-        <div className="hn-marquee-track hn-marquee-track-testimonials" style={{ display: 'flex', width: 'max-content' }}>
-          {loop.map((t, i) => (
+        <Marquee
+          items={testimonials}
+          label="testimonials"
+          arrowVariant="dark"
+          renderItem={(t, i) => (
             <figure
               key={t.name + i}
               style={{
@@ -40,8 +40,8 @@ export default function TestimonialsSection() {
                 <div style={{ fontSize: 13, opacity: .7 }}>{t.location}</div>
               </figcaption>
             </figure>
-          ))}
-        </div>
+          )}
+        />
       </div>
     </section>
   );
