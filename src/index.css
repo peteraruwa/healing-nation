@@ -161,6 +161,13 @@ textarea:focus-visible,
   .hn-hide-mobile{display:none}
 }
 
+@media (max-width:700px){
+  .hn-utility-nav{flex-wrap:nowrap!important;flex-direction:column;align-items:stretch!important;gap:8px!important}
+  .hn-utility-links{width:100%;-ms-overflow-style:none;scrollbar-width:none}
+  .hn-utility-links::-webkit-scrollbar{display:none}
+  .hn-utility-second-row{width:100%;justify-content:space-between}
+}
+
 @keyframes hngMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .hn-marquee-track{animation:hngMarquee 38s linear infinite}
 .hn-marquee-track-testimonials{animation-duration:46s}
