@@ -39,11 +39,12 @@ export default function FooterCTA() {
           <p style={{ margin: '0 0 16px', fontSize: 15.5, color: '#fbf1e3' }}>Receive our weekly devotionals, crusade dates, and important announcements.</p>
           {!subscribed ? (
             <form onSubmit={onSubscribe} style={{ display: 'flex', flexWrap: 'wrap', gap: 10, maxWidth: 440 }}>
-              <input value={subEmail} onChange={(e) => setSubEmail(e.target.value)} placeholder="Your email address" className="hn-input" style={{ flex: '1 1 200px', minWidth: 0, padding: '13px 14px', border: 'none', borderRadius: 5, fontSize: 15, color: '#2c2925' }} />
+              <label htmlFor="hn-footer-email" className="hn-visually-hidden">Your email address</label>
+              <input id="hn-footer-email" value={subEmail} onChange={(e) => setSubEmail(e.target.value)} placeholder="Your email address" type="email" required className="hn-input" style={{ flex: '1 1 200px', minWidth: 0, padding: '13px 14px', border: 'none', borderRadius: 5, fontSize: 15, color: '#2c2925' }} />
               <button type="submit" className="hn-sub-btn" style={{ background: '#2c2925', color: '#fff', border: 'none', fontSize: 15, fontWeight: 700, padding: '13px 24px', borderRadius: 5 }}>Subscribe</button>
             </form>
           ) : (
-            <div style={{ background: 'rgba(0,0,0,.18)', borderRadius: 8, padding: '18px 20px', maxWidth: 440, animation: 'hngFade .3s ease', fontSize: 15.5, fontWeight: 600 }}>You're subscribed — welcome to the family! ✦</div>
+            <div role="status" aria-live="polite" style={{ background: 'rgba(0,0,0,.18)', borderRadius: 8, padding: '18px 20px', maxWidth: 440, animation: 'hngFade .3s ease', fontSize: 15.5, fontWeight: 600 }}>You're subscribed — welcome to the family! ✦</div>
           )}
         </div>
       </div>

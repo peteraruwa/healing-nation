@@ -17,13 +17,32 @@ export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onResize = () => setWidth(window.innerWidth);
+    let frame;
+    const onResize = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => setWidth(window.innerWidth));
+    };
     window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      cancelAnimationFrame(frame);
+    };
   }, []);
 
   const isMobile = width < 920;
+
+  useEffect(() => {
+    document.body.style.overflow = isMobile && menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobile, menuOpen]);
+
+  useEffect(() => {
+    if (isMobile) return;
+    setMenuOpen(false);
+  }, [isMobile]);
+
   const theme = THEMES['Warm Tan'];
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <div
@@ -35,18 +54,29 @@ export default function HomePage() {
         overflowX: 'hidden',
       }}
     >
+      <a href="#main" className="hn-skip-link">Skip to main content</a>
       <UtilityBar show={true} />
-      <Header isDesktop={!isMobile} menuOpen={isMobile && menuOpen} toggleMenu={() => setMenuOpen((m) => !m)} />
-      <Hero />
-      <StorySection />
-      <ArmsSection />
-      <FounderSection />
-      <Suspense fallback={<div style={{ minHeight: 400 }} />}>
-        <GallerySection />
-        <ContactSection />
-        <LinksSection />
-        <FooterCTA />
-      </Suspense>
+      <Header isDesktop={!isMobile} menuOpen={isMobile && menuOpen} toggleMenu={() => setMenuOpen((m) => !m)} closeMenu={closeMenu} />
+      <main id="main">
+        <Hero />
+        <div id="story">
+          <StorySection />
+        </div>
+        <div id="arms">
+          <ArmsSection />
+        </div>
+        <div id="founder">
+          <FounderSection />
+        </div>
+        <Suspense fallback={<div style={{ minHeight: 400 }} />}>
+          <div id="gallery">
+            <GallerySection />
+          </div>
+          <ContactSection />
+          <LinksSection />
+          <FooterCTA />
+        </Suspense>
+      </main>
     </div>
   );
 }

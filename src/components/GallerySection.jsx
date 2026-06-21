@@ -26,13 +26,13 @@ export default function GallerySection() {
     <section style={{ background: '#2c2925', color: '#f4f3ea', padding: 'clamp(40px,6vw,80px) clamp(16px,5vw,40px)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto' }}>
         <div className="hn-reveal" style={{ textAlign: 'center', marginBottom: 'clamp(24px,4vw,40px)' }}>
-          <div style={{ color: 'var(--accent,#d6a96f)', fontSize: 13, fontWeight: 800, letterSpacing: '.2em' }}>THE WORK IN MOTION</div>
+          <div style={{ color: 'var(--accent,#d6a96f)', fontSize: 13, fontWeight: 800, letterSpacing: '.2em' }} aria-hidden="true">THE WORK IN MOTION</div>
           <h2 style={{ fontFamily: "'Lora',serif", fontWeight: 700, fontSize: 'clamp(28px,4.5vw,46px)', margin: '8px 0 0', color: '#fff' }}>Outreach Gallery</h2>
           <p style={{ maxWidth: 580, margin: '12px auto 0', color: '#c9c0b2', fontSize: 15.5 }}>Moments from the field — taking healing, hope, and the Gospel to communities and the streets.</p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 'clamp(10px,1.5vw,16px)' }}>
           {gallery.map((g, i) => (
-            <div key={i} className="hn-reveal" style={{ position: 'relative', aspectRatio: '1/1', borderRadius: 8, overflow: 'hidden', background: '#3a352f' }}>
+            <div key={i} className="hn-reveal" style={{ position: 'relative', aspectRatio: '1/1', borderRadius: 8, overflow: 'hidden', background: '#3a352f', animationDelay: `${(i % 5) * 0.08}s` }}>
               <picture>
                 <source srcSet={g.webp} type="image/webp" />
                 <img
@@ -50,7 +50,7 @@ export default function GallerySection() {
           ))}
         </div>
         <div className="hn-reveal" style={{ marginTop: 'clamp(24px,3.5vw,40px)' }}>
-          <div style={{ textAlign: 'center', color: 'var(--accent,#d6a96f)', fontSize: 13, fontWeight: 800, letterSpacing: '.2em', marginBottom: 16 }}>WATCH FROM THE FIELD</div>
+          <div style={{ textAlign: 'center', color: 'var(--accent,#d6a96f)', fontSize: 13, fontWeight: 800, letterSpacing: '.2em', marginBottom: 16 }} aria-hidden="true">WATCH FROM THE FIELD</div>
           <div style={{ maxWidth: 860, margin: '0 auto', borderRadius: 10, overflow: 'hidden', background: '#000', boxShadow: '0 18px 44px rgba(0,0,0,.4)' }}>
             <video ref={videoRef} src={outreachVideo} poster={posterImg} controls playsInline preload="none" style={{ width: '100%', maxHeight: '72vh', display: 'block', background: '#000', objectFit: 'contain' }} />
           </div>

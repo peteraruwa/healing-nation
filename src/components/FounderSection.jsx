@@ -23,7 +23,7 @@ export default function FounderSection() {
           </div>
         </div>
         <div className="hn-reveal" style={{ animationDelay: '.12s', flex: '1.3 1 360px' }}>
-          <div style={{ color: 'var(--accent,#a9783f)', fontSize: 13, fontWeight: 800, letterSpacing: '.2em' }}>MEET THE FOUNDER</div>
+          <div style={{ color: 'var(--accent-dark,#875f31)', fontSize: 13, fontWeight: 800, letterSpacing: '.2em' }}>MEET THE FOUNDER</div>
           <h2 style={{ fontFamily: "'Lora',serif", fontWeight: 700, fontSize: 'clamp(28px,4vw,44px)', margin: '8px 0 4px', lineHeight: 1.05 }}>Dr. Edafe Kelvin Ezebue</h2>
           <div style={{ fontFamily: "'Lora',serif", fontStyle: 'italic', fontSize: 'clamp(17px,2vw,21px)', color: '#7c8a57', marginBottom: 18 }}>Visionary · Evangelist · Medical Doctor</div>
           <p style={{ margin: '0 0 14px', fontSize: 'clamp(15px,1.5vw,17px)', color: '#4a463e' }}>Dr. Edafe Kelvin Ezebue — popularly known as PK — is a dynamic servant of God, a seasoned teacher of the Word, and a trained medical doctor — carrying a burning mandate to spread the Gospel of Jesus Christ across the nations. He is the visionary behind Healing Nations Global Outreach, committed to revival, transformation, and the raising of kingdom ambassadors.</p>
