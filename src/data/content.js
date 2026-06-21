@@ -50,6 +50,29 @@ export const credentials = [
 
 export const links = ['Find a Crusade', 'Join Campus Fellowship', 'Apply to Bible School', 'Partner With Us', 'Prayer Request', 'Watch Sermons'];
 
+export const searchIndex = [
+  { label: 'About Us', target: '#story' },
+  { label: 'Our Story', target: '#story' },
+  { label: 'Our Three Arms', target: '#arms' },
+  { label: 'Campus Invasion', target: '#arms' },
+  { label: 'Crusades & Outreaches', target: '#arms' },
+  { label: 'Discipleship & Bible School', target: '#arms' },
+  { label: 'The Founder', target: '#founder' },
+  { label: 'Dr. Edafe Kelvin Ezebue', target: '#founder' },
+  { label: 'Outreach Gallery', target: '#gallery' },
+  { label: 'Media', target: '#gallery' },
+  { label: 'Contact Us', target: '#contact' },
+  { label: 'Prayer Request', target: '#contact' },
+  { label: 'Events', target: '#events' },
+  { label: 'Find a Crusade', target: '#events' },
+  { label: 'Join Campus Fellowship', target: '#events' },
+  { label: 'Apply to Bible School', target: '#events' },
+  { label: 'Watch Sermons', target: '#events' },
+  { label: 'Give Online', target: '/give' },
+  { label: 'Partner With Us', target: '/give' },
+  { label: 'Testimonies', target: '#gallery' },
+];
+
 export const gallery = [
   { jpg: gallery1Jpg, webp: gallery1Webp, width: 700, height: 525 },
   { jpg: gallery2Jpg, webp: gallery2Webp, width: 700, height: 525 },

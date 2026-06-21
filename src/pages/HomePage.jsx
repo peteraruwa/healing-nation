@@ -72,8 +72,12 @@ export default function HomePage() {
           <div id="gallery">
             <GallerySection />
           </div>
-          <ContactSection />
-          <LinksSection />
+          <div id="contact">
+            <ContactSection />
+          </div>
+          <div id="events">
+            <LinksSection />
+          </div>
           <FooterCTA />
         </Suspense>
       </main>

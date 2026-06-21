@@ -98,8 +98,9 @@ textarea:focus-visible,
 .hn-give-btn:hover{background:var(--accent-dark,#875f31);transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.2)}
 .hn-give-btn:active{transform:translateY(0) scale(.98)}
 
-.hn-partner-btn{transition:transform .2s ease,background .2s ease,color .2s ease}
-.hn-partner-btn:hover{background:#2c2925;color:#fff;transform:translateY(-2px)}
+.hn-partner-btn{transition:transform .2s ease,background .2s ease,color .2s ease;color:#2c2925}
+.hn-partner-btn:hover,
+.hn-partner-btn:focus-visible{background:#2c2925;color:#fff;transform:translateY(-2px)}
 .hn-partner-btn:active{transform:translateY(0) scale(.98)}
 
 /* hamburger icon morph to X */
@@ -159,4 +160,4 @@ textarea:focus-visible,
   .hn-hide-mobile{display:none}
 }
 
-#story,#arms,#founder,#gallery{scroll-margin-top:96px}
+#story,#arms,#founder,#gallery,#events,#contact{scroll-margin-top:96px}
