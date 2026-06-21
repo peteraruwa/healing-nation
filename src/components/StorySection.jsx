@@ -1,5 +1,6 @@
 import { facts } from '../data/content';
-import storyImg from '../assets/story-panel.jpeg';
+import storyJpg from '../assets/story-panel.jpg';
+import storyWebp from '../assets/story-panel.webp';
 
 export default function StorySection() {
   return (
@@ -7,7 +8,18 @@ export default function StorySection() {
       <div className="hn-reveal" style={{ maxWidth: 1180, margin: '0 auto', display: 'flex', flexWrap: 'wrap', borderRadius: 6, overflow: 'hidden', boxShadow: '0 18px 44px rgba(0,0,0,.10)' }}>
         <div style={{ flex: '1 1 320px', background: '#2c2925', color: '#e8e1d6', padding: '0 0 30px' }}>
           <div style={{ position: 'relative', height: 'clamp(150px,22vw,210px)', background: '#2c2925', overflow: 'hidden' }}>
-            <img src={storyImg} alt="Ministry gathering" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }} />
+            <picture>
+              <source srcSet={storyWebp} type="image/webp" />
+              <img
+                src={storyJpg}
+                width={800}
+                height={600}
+                alt="Ministry gathering"
+                loading="lazy"
+                decoding="async"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', display: 'block' }}
+              />
+            </picture>
           </div>
           <div style={{ padding: 'clamp(24px,3.5vw,36px) clamp(22px,4vw,40px) 0' }}>
             <div style={{ fontFamily: "'Lora',serif", fontWeight: 700, fontSize: 'clamp(26px,3.6vw,38px)', lineHeight: 1.05, color: '#fff' }}>Healing Nations</div>

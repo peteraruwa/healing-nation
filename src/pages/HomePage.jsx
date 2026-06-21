@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense, lazy } from 'react';
 import UtilityBar from '../components/UtilityBar';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import StorySection from '../components/StorySection';
 import ArmsSection from '../components/ArmsSection';
 import FounderSection from '../components/FounderSection';
-import GallerySection from '../components/GallerySection';
-import ContactSection from '../components/ContactSection';
-import LinksSection from '../components/LinksSection';
-import FooterCTA from '../components/FooterCTA';
 import { THEMES } from '../data/content';
+
+const GallerySection = lazy(() => import('../components/GallerySection'));
+const ContactSection = lazy(() => import('../components/ContactSection'));
+const LinksSection = lazy(() => import('../components/LinksSection'));
+const FooterCTA = lazy(() => import('../components/FooterCTA'));
 
 export default function HomePage() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -40,10 +41,12 @@ export default function HomePage() {
       <StorySection />
       <ArmsSection />
       <FounderSection />
-      <GallerySection />
-      <ContactSection />
-      <LinksSection />
-      <FooterCTA />
+      <Suspense fallback={<div style={{ minHeight: 400 }} />}>
+        <GallerySection />
+        <ContactSection />
+        <LinksSection />
+        <FooterCTA />
+      </Suspense>
     </div>
   );
 }

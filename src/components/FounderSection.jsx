@@ -1,5 +1,6 @@
 import { credentials } from '../data/content';
-import founderImg from '../assets/Dr_Ezebue_Edafe.jpeg';
+import founderJpg from '../assets/Dr_Ezebue_Edafe.jpg';
+import founderWebp from '../assets/Dr_Ezebue_Edafe.webp';
 
 export default function FounderSection() {
   return (
@@ -7,7 +8,18 @@ export default function FounderSection() {
       <div style={{ maxWidth: 1180, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(28px,4vw,56px)', alignItems: 'center' }}>
         <div className="hn-reveal" style={{ flex: '1 1 280px', maxWidth: 420, margin: '0 auto' }}>
           <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: 10, overflow: 'hidden', background: '#2c2925', boxShadow: '0 16px 40px rgba(0,0,0,.18)' }}>
-            <img src={founderImg} alt="Dr. Edafe Kelvin Ezebue" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
+            <picture>
+              <source srcSet={founderWebp} type="image/webp" />
+              <img
+                src={founderJpg}
+                width={840}
+                height={1131}
+                alt="Dr. Edafe Kelvin Ezebue"
+                loading="lazy"
+                decoding="async"
+                style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+              />
+            </picture>
           </div>
         </div>
         <div className="hn-reveal" style={{ animationDelay: '.12s', flex: '1.3 1 360px' }}>
