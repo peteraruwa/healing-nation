@@ -27,9 +27,9 @@ export default function Marquee({ items, renderItem, label, arrowVariant = 'ligh
       <div
         ref={viewportRef}
         className="hn-marquee-viewport"
-        style={{ overflowX: 'auto', overflowY: 'hidden', maskImage: 'linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)' }}
+        style={{ overflowX: 'auto', overflowY: 'hidden', maskImage: 'linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)', scrollSnapType: 'x mandatory' }}
       >
-        <div style={{ display: 'flex', width: 'max-content' }}>
+        <div className="hn-marquee-track" style={{ display: 'flex', width: 'max-content' }}>
           {items.map((item, i) => renderItem(item, i))}
         </div>
       </div>

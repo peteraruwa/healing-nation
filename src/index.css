@@ -169,6 +169,7 @@ textarea:focus-visible,
 
 .hn-marquee-viewport{-ms-overflow-style:none;scrollbar-width:none}
 .hn-marquee-viewport::-webkit-scrollbar{display:none}
+.hn-marquee-track > *{scroll-snap-align:start}
 
 .hn-ticket{box-shadow:0 14px 32px rgba(0,0,0,.28)}
 
